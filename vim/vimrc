@@ -1,0 +1,99 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+"-------------------------------------------------------------------------------------------------"
+"                                               PLUGINS
+"-------------------------------------------------------------------------------------------------"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Version control
+Plugin 'tpope/vim-fugitive'
+Plugin 'mhinz/vim-signify'
+
+" File explorer
+Plugin 'preservim/nerdtree'
+
+" File layout
+Plugin 'majutsushi/tagbar'
+
+" Linux kernel coding style
+
+" Enhance
+Plugin 'tpope/vim-surround'
+
+" Completion
+Plugin 'raimondi/delimitmate'
+
+" Color schemes
+Plugin 'baycomb'
+Plugin 'bdesham/biogoo'
+Plugin 'donbass.vim'
+Plugin 'fog-colorscheme'
+Plugin 'jhlight.vim'
+Plugin 'oceanblack.vim'
+Plugin 'Sift'
+Plugin 'smp'
+Plugin 'tango-morning.vim'
+Plugin 'Transparent'
+Plugin 'vcbc.vim'
+Plugin 'xemacs-colorscheme'
+Plugin 'dracula/vim'
+
+" ??? what the fuck is this ???
+Plugin 'junegunn/goyo.vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Checkout https://vimawesome.com for more plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+" Re-enable filetype specific plugin and indent
+filetype plugin indent on    " required
+
+"-------------------------------------------------------------------------------------------------"
+
+" Colors settings
+set background=dark
+" Set consistent bgcolor with Xres file before loading the colorscheme
+let g:dracula_colorterm = 0
+colors dracula
+
+set ignorecase smartcase	" Improve search
+set autoindent smartindent	" Improve indentation
+set hlsearch			" Hightlight search
+
+" Set Linux kernel coding style by default
+" Use :retab to match the current tab settings
+set shiftwidth=8		" Tab size
+set tabstop=8			" Number of spaces for a tab
+set softtabstop=8		" Makes one backspace go back a full 8 spaces
+set textwidth=80		" Screen in 100 columns wide, wrap at 80
+" TODO debug
+syn match cError  /\%>100v.\+/	" Highlight anything past 100 in red
+
+" Highlight tabs and trailing whitespaces
+set listchars=tab:»\ ,trail:·
+set list
+
+" NERDTree plugin config
+nmap <F4> :NERDTreeToggle<CR> "Map F4 to NERDTree
+let g:NERDTreeMouseMode = 1 " Single clic to open
+
+" Tagbar plugin settings
+nmap <F3> :TagbarToggle<CR> " Map F3 to Tagbar
+"let g:tagbar_sort = 0 " Sort tags according to source file order

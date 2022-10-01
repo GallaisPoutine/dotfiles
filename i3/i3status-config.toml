@@ -1,0 +1,47 @@
+theme = "dracula"
+icons = "awesome"
+
+[[block]]
+block = "music"
+player = "spotify"
+buttons = ["prev", "play", "next"]
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "bluetooth"
+mac = "48:5A:B6:EF:33:47"
+hide_disconnected = true
+
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+minimum = 1
+maximum = 100
+step_width = 1
+cycle = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %R"
+
+[[block]]
+block = "battery"
+if_command = "test -e /sys/class/power_supply/BAT0"

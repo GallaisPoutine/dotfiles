@@ -1,0 +1,5 @@
+!! Color config
+#include "/home/raphael/dotfiles/xres/themes/dracula.xres"
+
+!! Urxvt config
+#include "/home/raphael/dotfiles/xres/urxvt.cfg"

@@ -1,0 +1,44 @@
+! Dracula Xresources palette
+
+#define D_cyan		#8BE9FD
+#define D_green		#50FA7B
+#define D_orange	#FFB86C
+#define D_pink		#FF796C
+#define D_purple	#BD93F9
+#define D_red		#FF5555
+#define D_yellow	#F1FA8C
+
+#define D_blue		#268bd2 ! no blue either ? wtf
+
+#define D_background	#282A36
+#define D_foreground	#F8F8F2
+#define D_base02        #000000
+#define D_base01        #586e75
+#define D_base00        #657b83
+#define D_base1         #9AEDFE
+#define D_base2		#BFBFBF
+#define D_base3         #E6E6E6
+#define D_base4		#4D4D4D
+
+
+*.background:		D_background
+*.foreground:		D_foreground
+!*.fadeColor:		D_background
+!*.cursorColor:		D_base1
+
+*.color0:		D_base02
+*.color1:		D_red
+*.color2:		D_green
+*.color3:		D_yellow
+*.color4:		D_purple
+*.color5:		D_pink
+*.color6:		D_cyan
+*.color7:		D_base2
+*.color8:		D_base4
+*.color9:		#FF6E67
+*.color10:		#5AF78E
+*.color11:		#F4F99D
+*.color12:		#CAA9FA
+*.color13:		#FF92D0
+*.color14:		D_base1
+*.color15:		D_base3
