@@ -1,0 +1,428 @@
+
+alias tlog='TortoiseGitProc /command:log /limit:200&'
+alias cdgit='cd /c/git/; ls'
+alias cdcache='cd /c/git/cache/; ls'
+alias e='explorer .&'
+alias h='history'
+np()
+{
+  notepad++.exe $* &
+}
+alias edit='np'
+function num() {
+#        echo "num ibase obase number"
+        echo "obase=$2; ibase=$1; $3" | bc
+}
+
+
+#   -----------------------------
+#   1.  MAKE TERMINAL BETTER
+#   -----------------------------
+
+alias cp='cp -iv'                           # Preferred 'cp' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
+#alias ll='ls -lAFh'                         # Preferred 'ls' implementation
+alias less='less -FSRXc'                    # Preferred 'less' implementation
+alias nano='nano -W'                        # Preferred 'nano' implementation
+alias wget='wget -c'                        # Preferred 'wget' implementation (resume download)
+alias c='clear'                             # c:            Clear terminal display
+alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
+alias show_options='shopt'                  # Show_options: display bash options settings
+alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
+alias fix_term='echo -e "\033c"'            # fix_term:     Reset the conosle.  Similar to the reset command
+alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
+alias src='source ~/.bashrc'                # src:          Reload .bashrc file
+alias grep='grep --color=auto'		    # grep:	    Preferred grep implementation
+function qgrep() {
+	grep -rinI "$1" .
+}
+alias minicom='minicom -w --color=on'
+
+
+#   -----------------------------
+#   2.  CHMOD PERMISSIONS
+#   -----------------------------
+alias perm='stat --printf "%a %n \n "'      # perm: Show permission of target in number
+alias 000='chmod 000'                       # ---------- (nobody)
+alias 640='chmod 640'                       # -rw-r----- (user: rw, group: r, other: -)
+alias 644='chmod 644'                       # -rw-r--r-- (user: rw, group: r, other: -)
+alias 755='chmod 755'                       # -rwxr-xr-x (user: rwx, group: rx, other: x)
+alias 775='chmod 775'                       # -rwxrwxr-x (user: rwx, group: rwx, other: rx)
+alias mx='chmod a+x'                        # ---x--x--x (user: --x, group: --x, other: --x)
+alias ux='chmod u+x'                        # ---x------ (user: --x, group: -, other: -)
+
+
+#   -----------------------------
+#   3.  Directory Listing aliases
+#   -----------------------------
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+alias .......='cd ../../../../../..'
+
+alias dir='ls -hFx'
+alias l.='ls -d .* --color=tty' # short listing, only hidden files - .*
+alias l='ls -lathF'             # long, sort by newest to oldest
+alias L='ls -latrhF'            # long, sort by oldest to newest
+alias la='ls -Al'               # show hidden files
+alias lc='ls -lcr'              # sort by change time
+alias lk='ls -lSr'              # sort by size
+alias lh='ls -lSrh'             # sort by size human readable
+alias lm='ls -al | more'        # pipe through 'more'
+alias lo='ls -laSFh'            # sort by size largest to smallest
+alias lr='ls -lR'               # recursive ls
+alias lt='ls -ltr'              # sort by date
+alias lu='ls -lur'              # sort by access time
+
+
+#   -----------------------------
+#   lr:  Full Recursive Directory Listing
+#   ------------------------------------------
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
+
+alias dud='du -d 1 -h'                      # Short and human-readable file listing
+alias duf='du -sh *'                        # Short and human-readable directory listing
+
+#   -------------------------------
+#   4.  FILE AND FOLDER MANAGEMENT
+#   -------------------------------
+
+alias numFiles='echo $(ls -1 | wc -l)'       # numFiles:     Count of non-hidden files in current dir
+alias make1mb='truncate -s 1m ./1MB.dat'     # make1mb:      Creates a file of 1mb size (all zeros)
+alias make5mb='truncate -s 5m ./5MB.dat'     # make5mb:      Creates a file of 5mb size (all zeros)
+alias make10mb='truncate -s 10m ./10MB.dat'  # make10mb:     Creates a file of 10mb size (all zeros)
+
+
+#   ---------------------------
+#   5.  SEARCHING
+#   ---------------------------
+
+alias qfind="find . -name "                 # qfind:    Quickly search for file
+
+
+#   ---------------------------
+#   6.  PROCESS MANAGEMENT
+#   ---------------------------
+
+#   memHogsTop, memHogsPs:  Find memory hogs
+#   -----------------------------------------------------
+alias memHogsTop='top -l 1 -o rsize | head -20'
+alias memHogsPs='ps wwaxm -o pid,stat,vsize,rss,time,command | head -10'
+
+#   cpuHogs:  Find CPU hogs
+#   -----------------------------------------------------
+alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
+
+#   topForever:  Continual 'top' listing (every 10 seconds)
+#   -----------------------------------------------------
+alias topForever='top -l 9999999 -s 10 -o cpu'
+
+#   ttop:  Recommended 'top' invocation to minimize resources
+#   ------------------------------------------------------------
+#       Taken from this macosxhints article
+#       http://www.macosxhints.com/article.php?story=20060816123853639
+#   ------------------------------------------------------------
+alias ttop="top -R -F -s 10 -o rsize"
+
+
+#   ---------------------------
+#   7.  NETWORKING
+#   ---------------------------
+
+alias ip='ip -c=auto'
+alias netCons='lsof -i'                                   # netCons:      Show all open TCP/IP sockets
+alias lsock='sudo /usr/sbin/lsof -i -P'                   # lsock:        Display open sockets
+alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'         # lsockU:       Display only open UDP sockets
+alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'         # lsockT:       Display only open TCP sockets
+alias ipInfo0='ifconfig getpacket en0'                    # ipInfo0:      Get info on connections for en0
+alias ipInfo1='ifconfig getpacket en1'                    # ipInfo1:      Get info on connections for en1
+alias openPorts='sudo lsof -i | grep LISTEN'              # openPorts:    All listening connections
+alias showBlocked='sudo ipfw list'                        # showBlocked:  All ipfw rules inc/ blocked IPs
+
+
+#   ---------------------------------------
+#   8.  SYSTEMS OPERATIONS & INFORMATION
+#   ---------------------------------------
+
+alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when booted into single-user
+
+
+#   ---------------------------------------
+#   9.  DATE & TIME MANAGEMENT
+#   ---------------------------------------
+
+alias bdate="date '+%a, %b %d %Y %T %Z'"
+alias cal3='cal -3'
+alias da='date "+%Y-%m-%d %A    %T %Z"'
+alias daysleft='echo "There are $(($(date +%j -d"Dec 31, $(date +%Y)")-$(date +%j))) left in year $(date +%Y)."'
+alias epochtime='date +%s'
+alias mytime='date +%H:%M:%S'
+alias secconvert='date -d@1234567890'
+alias stamp='date "+%Y%m%d%a%H%M"'
+alias timestamp='date "+%Y%m%dT%H%M%S"'
+alias today='date +"%A, %B %-d, %Y"'
+alias weeknum='date +%V'
+
+
+#   ---------------------------------------
+#   9.  GIT MANAGEMENT
+#   ---------------------------------------
+
+# The name of the current branch
+# Back-compatibility wrapper for when this function was defined here in
+# the plugin, before being pulled in to core lib/git.zsh as git_current_branch()
+# to fix the core -> git plugin dependency.
+function current_branch() {
+  git_current_branch
+}
+# The list of remotes
+function current_repository() {
+  if ! $_omb_git_git_cmd rev-parse --is-inside-work-tree &> /dev/null; then
+    return
+  fi
+  echo $($_omb_git_git_cmd remote -v | cut -d':' -f 2)
+}
+# Pretty log messages
+function _git_log_prettily(){
+  if ! [ -z $1 ]; then
+    git log --pretty=$1
+  fi
+}
+# Warn if the current branch is a WIP
+function work_in_progress() {
+  if $(git log -n 1 2>/dev/null | grep -q -c "\-\-wip\-\-"); then
+    echo "WIP!!"
+  fi
+}
+
+#
+# Aliases
+# (sorted alphabetically)
+#
+
+alias g='git'
+
+alias ga='git add'
+alias gaa='git add --all'
+alias gapa='git add --patch'
+alias gau='git add --update'
+
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbd='git branch -d'
+alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
+alias gbl='git blame -b -w'
+alias gbnm='git branch --no-merged'
+alias gbr='git branch --remote'
+alias gbs='git bisect'
+alias gbsb='git bisect bad'
+alias gbsg='git bisect good'
+alias gbsr='git bisect reset'
+alias gbss='git bisect start'
+
+alias gc='git commit -v'
+alias gc!='git commit -v --amend'
+alias gcn!='git commit -v --no-edit --amend'
+alias gca='git commit -v -a'
+alias gca!='git commit -v -a --amend'
+alias gcan!='git commit -v -a --no-edit --amend'
+alias gcans!='git commit -v -a -s --no-edit --amend'
+alias gcam='git commit -a -m'
+alias gcsm='git commit -s -m'
+alias gcb='git checkout -b'
+alias gcf='git config --list'
+alias gcl='git clone --recursive'
+alias gclean='git clean -fd'
+alias gpristine='git reset --hard && git clean -dfx'
+alias gcm='git checkout master'
+alias gcd='git checkout develop'
+alias gcmsg='git commit -m'
+alias gco='git checkout'
+alias gcount='git shortlog -sn'
+#compdef _git gcount complete -F _git gcount
+alias gcp='git cherry-pick'
+alias gcpa='git cherry-pick --abort'
+alias gcpc='git cherry-pick --continue'
+alias gcps='git cherry-pick -s'
+alias gcs='git commit -S'
+
+alias gd='git diff'
+alias gdca='git diff --cached'
+alias gdct='git describe --tags `git rev-list --tags --max-count=1`'
+alias gdt='git diff-tree --no-commit-id --name-only -r'
+alias gdw='git diff --word-diff'
+
+gdv() {
+  git diff -w "$@" | view -
+}
+#compdef _git gdv=git-diff
+
+alias gf='git fetch'
+alias gfa='git fetch --all --prune'
+alias gfo='git fetch origin'
+
+gfg() {
+  git ls-files | grep "$@"
+}
+#compdef _grep gfg
+
+alias gg='git gui citool'
+alias gga='git gui citool --amend'
+
+ggf() {
+  [[ "$#" != 1 ]] && local b="$(git_current_branch)"
+  git push --force origin "${b:=$1}"
+}
+#compdef _git ggf=git-checkout
+
+ggl() {
+  if [[ "$#" != 0 ]] && [[ "$#" != 1 ]]; then
+    git pull origin "${*}"
+  else
+    [[ "$#" == 0 ]] && local b="$(git_current_branch)"
+    git pull origin "${b:=$1}"
+  fi
+}
+#compdef _git ggl=git-checkout
+
+ggp() {
+  if [[ "$#" != 0 ]] && [[ "$#" != 1 ]]; then
+    git push origin "${*}"
+  else
+    [[ "$#" == 0 ]] && local b="$(git_current_branch)"
+    git push origin "${b:=$1}"
+  fi
+}
+#compdef _git ggp=git-checkout
+
+ggpnp() {
+  if [[ "$#" == 0 ]]; then
+    ggl && ggp
+  else
+    ggl "${*}" && ggp "${*}"
+  fi
+}
+#compdef _git ggpnp=git-checkout
+
+ggu() {
+  [[ "$#" != 1 ]] && local b="$(git_current_branch)"
+  git pull --rebase origin "${b:=$1}"
+}
+#compdef _git ggu=git-checkout
+
+alias ggpur='ggu'
+#compdef _git ggpur=git-checkout
+
+alias ggpull='git pull origin $(git_current_branch)'
+#compdef _git ggpull=git-checkout
+
+alias ggpush='git push origin $(git_current_branch)'
+#compdef _git ggpush=git-checkout
+
+alias ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
+alias gpsup='git push --set-upstream origin $(git_current_branch)'
+
+alias ghh='git help'
+
+alias gignore='git update-index --assume-unchanged'
+alias gignored='git ls-files -v | grep "^[[:lower:]]"'
+alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
+#compdef _git git-svn-dcommit-push=git
+
+alias gk='\gitk --branches --max-count=10000 &'
+#compdef _git gk='gitk'
+alias gke='\gitk --all $(git log -g --pretty=%h) &'
+#compdef _git gke='gitk'
+alias gka='\gitk --all --branches --max-count=10000 &'
+
+alias gl='git pull'
+alias glg='git log --stat'
+alias glgp='git log --stat -p'
+alias glgg='git log --graph'
+alias glgga='git log --graph --decorate --all'
+alias glgm='git log --graph --max-count=10'
+alias glo='git log --oneline --decorate'
+alias gla='git log --oneline --decorate --all --graph'
+alias glol="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glola="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias glog='git log --oneline --decorate --graph'
+alias gloga='git log --oneline --decorate --graph --all'
+alias glp="_git_log_prettily"
+#compdef _git glp=git-log
+
+alias gm='git merge'
+alias gmom='git merge origin/master'
+alias gmt='git mergetool --no-prompt'
+alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
+alias gmum='git merge upstream/master'
+
+alias gp='git push'
+alias gpd='git push --dry-run'
+alias gpoat='git push origin --all && git push origin --tags'
+#compdef _git gpoat=git-push
+alias gpu='git push upstream'
+alias gpv='git push -v'
+
+alias gr='git remote'
+alias gra='git remote add'
+alias grb='git rebase'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grbi='git rebase -i'
+alias grbm='git rebase master'
+alias grbs='git rebase --skip'
+alias grh='git reset HEAD'
+alias grhh='git reset HEAD --hard'
+alias grmv='git remote rename'
+alias grrm='git remote remove'
+alias grset='git remote set-url'
+alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
+alias gru='git reset --'
+alias grup='git remote update'
+alias grv='git remote -v'
+
+alias gsb='git status -sb'
+alias gsd='git svn dcommit'
+alias gsi='git submodule init'
+alias gsps='git show --pretty=short --show-signature'
+alias gsr='git svn rebase'
+alias gss='git status -s'
+alias gst='git status'
+alias gsta='git stash save'
+alias gstaa='git stash apply'
+alias gstc='git stash clear'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash show --text'
+alias gsu='git submodule update'
+
+alias gts='git tag -s'
+alias gtv='git tag | sort -V'
+
+alias gunignore='git update-index --no-assume-unchanged'
+alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
+alias gup='git pull --rebase'
+alias gupv='git pull --rebase -v'
+alias glum='git pull upstream master'
+
+alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
+alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
+
+
+function lvds() {
+    OFFSET=12
+
+    INPUT=$1
+    SUBSTRING=$(num 16 2 $INPUT)
+
+    SUBSTRING=$(printf %032d $SUBSTRING)
+    echo $SUBSTRING
+    for i in seq 0 5 15; do
+        echo $OFFSET+$i
+        echo ${SUBSTRING:$OFFSET+$i: 5}
+    done
+}

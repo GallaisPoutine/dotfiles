@@ -4,8 +4,9 @@
 #
 set -o nounset		# Treat unset variables as errors
 
-ln -snf ${PWD}/bash_profile		${HOME}/.bash_profile
-ln -snf ${PWD}/bashrc 			${HOME}/.bashrc
+ln -snf ${PWD}/bash/bash_profile	${HOME}/.bash_profile
+ln -snf ${PWD}/bash/bashrc 		${HOME}/.bashrc
+ln -snf ${PWD}/bash/bash_aliases	${HOME}/.bash_aliases
 # ln -snf ${PWD}/.colors		${HOME}
 ln -snf ${PWD}/dircolors/dracula	${HOME}/.dircolors
 ln -snf ${PWD}/vim/vimrc 		${HOME}/.vimrc
