@@ -55,6 +55,10 @@ Plugin 'dracula/vim'
 " ??? what the fuck is this ???
 Plugin 'junegunn/goyo.vim'
 
+" Show color from hex
+" /!\ Only use it manually /!\
+Plugin 'lilydjwg/colorizer'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Checkout https://vimawesome.com for more plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -100,3 +104,6 @@ let g:NERDTreeMouseMode = 1 " Single clic to open
 " Tagbar plugin settings
 nmap <F3> :TagbarToggle<CR> " Map F3 to Tagbar
 "let g:tagbar_sort = 0 " Sort tags according to source file order
+
+" Colorizer plugin settings
+let g:colorizer_startup = 0	" Don't enable colorizer at startup
