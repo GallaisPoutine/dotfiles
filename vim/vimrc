@@ -87,8 +87,11 @@ set ignorecase smartcase	" Improve search
 set autoindent smartindent	" Improve indentation
 set hlsearch			" Hightlight search
 
-set guioptions -=T  " Removes the toolbar
-"set guioptions -=m  " Removes the menu
+" Handle GUI specific options
+if has("gui_running")
+	set guioptions -=T  " Removes the toolbar
+	"set guioptions -=m  " Removes the menu
+endif
 
 " Set Linux kernel coding style by default
 " Use :retab to match the current tab settings
