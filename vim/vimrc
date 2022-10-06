@@ -73,9 +73,15 @@ filetype plugin indent on    " required
 
 " Colors settings
 set background=dark
-" Set consistent bgcolor with Xres file before loading the colorscheme
-let g:dracula_colorterm = 0
-colors dracula
+
+" Colorscheme differs between GUI and CLI
+if has("gui_running")
+	colors evening
+else
+	" Set consistent bgcolor with Xres file before loading the colorscheme
+	let g:dracula_colorterm = 0
+	colors dracula
+endif
 
 set ignorecase smartcase	" Improve search
 set autoindent smartindent	" Improve indentation
@@ -98,12 +104,12 @@ set listchars=tab:»\ ,trail:·
 set list
 
 " NERDTree plugin config
-nmap <F4> :NERDTreeToggle<CR> "Map F4 to NERDTree
-let g:NERDTreeMouseMode = 1 " Single clic to open
+nmap <F4> :NERDTreeToggle<CR>	" Map F4 to NERDTree
+let g:NERDTreeMouseMode = 1	" Single clic to open
 
 " Tagbar plugin settings
-nmap <F3> :TagbarToggle<CR> " Map F3 to Tagbar
-"let g:tagbar_sort = 0 " Sort tags according to source file order
+nmap <F3> :TagbarToggle<CR>	" Map F3 to Tagbar
+"let g:tagbar_sort = 0		" Sort tags according to source file order
 
 " Colorizer plugin settings
 let g:colorizer_startup = 0	" Don't enable colorizer at startup
