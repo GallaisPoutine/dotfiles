@@ -1,14 +1,3 @@
-
-alias tlog='TortoiseGitProc /command:log /limit:200&'
-alias cdgit='cd /c/git/; ls'
-alias cdcache='cd /c/git/cache/; ls'
-alias e='explorer .&'
-alias h='history'
-np()
-{
-  notepad++.exe $* &
-}
-alias edit='np'
 function num() {
 #        echo "num ibase obase number"
         echo "obase=$2; ibase=$1; $3" | bc
@@ -38,6 +27,7 @@ function qgrep() {
 	grep -rinI "$1" .
 }
 alias minicom='minicom -w --color=on'
+alias feh='feh --image-bg black --scale-down'	# Improve image viewer experience
 
 
 #   -----------------------------
@@ -101,7 +91,7 @@ alias make10mb='truncate -s 10m ./10MB.dat'  # make10mb:     Creates a file of 1
 #   ---------------------------
 
 alias qfind="find . -name "                 # qfind:    Quickly search for file
-
+alias s='grep -rinI'
 
 #   ---------------------------
 #   6.  PROCESS MANAGEMENT
