@@ -1,0 +1,19 @@
+find -H . -name "*.[CHchsS]" -o \
+-name "*.h?" -o \
+-name "*.h??" -o \
+-name "*.asm" -o \
+-name "*.inc" -o \
+-name "*.cpp" -o \
+-name "*.cc" -o \
+-name "*.tl" -o \
+-name "*.pxs" -o \
+-name "Kconfig" -o \
+-name "[Mm]akefile*" -o \
+-name "*.java" -o \
+-name "*.dts" -o \
+-name "*.dtsi" -o \
+-name "*.py"
+
+ctags -a -I"EXPORT_SYMBOL+,EXPORT_SYMBOL_GPL+,noinline,module_init+,module_exit+,__init,__exit,__releases,__acquires,ENTRY+" -L "cscope.files" --format=2 --totals=yes --links=yes --file-tags=yes --sort=yes --excmd=pattern
+
+cscope -b -U -i cscope.files -k
