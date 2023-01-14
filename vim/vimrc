@@ -30,6 +30,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'majutsushi/tagbar'
 
 " Linux kernel coding style
+Plugin 'gregkh/kernel-coding-style'
 
 " Enhance
 Plugin 'tpope/vim-surround'
@@ -71,8 +72,17 @@ filetype plugin indent on    " required
 
 "-------------------------------------------------------------------------------------------------"
 
-" Colors settings
+" Global settings
 set background=dark
+syntax on	" Enables the syntax highlighting
+set mouse=a	" Enable mouse scrolling
+set ignorecase smartcase	" Improve search
+set autoindent smartindent	" Improve indentation
+set hlsearch			" Hightlight search
+
+" Highlight tabs and trailing whitespaces
+set listchars=tab:»\ ,trail:·
+set list
 
 " Colorscheme differs between GUI and CLI
 if has("gui_running")
@@ -83,28 +93,11 @@ else
 	colors dracula
 endif
 
-set ignorecase smartcase	" Improve search
-set autoindent smartindent	" Improve indentation
-set hlsearch			" Hightlight search
-
 " Handle GUI specific options
 if has("gui_running")
 	set guioptions -=T  " Removes the toolbar
 	"set guioptions -=m  " Removes the menu
 endif
-
-" Set Linux kernel coding style by default
-" Use :retab to match the current tab settings
-set shiftwidth=8		" Tab size
-set tabstop=8			" Number of spaces for a tab
-set softtabstop=8		" Makes one backspace go back a full 8 spaces
-set textwidth=80		" Screen in 100 columns wide, wrap at 80
-" TODO debug
-syn match cError  /\%>100v.\+/	" Highlight anything past 100 in red
-
-" Highlight tabs and trailing whitespaces
-set listchars=tab:»\ ,trail:·
-set list
 
 " NERDTree plugin config
 nmap <F4> :NERDTreeToggle<CR>	" Map F4 to NERDTree
