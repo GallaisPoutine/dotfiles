@@ -247,9 +247,13 @@ bar {
 # Set wallpaper
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper/PANB6669.JPG
 
-for_window [class="^.*"] border pixel 2
+# Gaps
+for_window [class="^.*"] border pixel 1
+for_window [all] title_window_icon yes
+for_window [all] title_window_icon padding 3
 gaps inner 3
 gaps outer 3
+# smart_gaps inverse_outer
 
 # Bind Browser to $mod+b
 bindsym $mod+b exec --no-startup-id /usr/bin/firefox
