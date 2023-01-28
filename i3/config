@@ -201,15 +201,15 @@ bindsym $mod+Pause mode "$mode_system"
 set $screen_config Screen (j) clone, (k) extend, (l) builtin only, (m) extern only
 mode "$screen_config" {
 	bindsym j exec --no-startup-id mons -d, mode "default"
-	bindsym k exec --no-startup-id mons -m, mode "default"
-	bindsym l exec --no-startup-id mons -o, mode "default"
-	bindsym m exec --no-startup-id mons -s, mode "default"
+	bindsym k exec --no-startup-id ~/.screenlayout/extend.sh && ~/.fehbg, mode "default"
+	bindsym l exec --no-startup-id ~/.screenlayout/builtin.sh && ~/.fehbg, mode "default"
+	bindsym m exec --no-startup-id ~/.screenlayout/extern.sh && ~/.fehbg, mode "default"
 	
 	# same bindings, but for the arrow keys
 	bindsym Left exec --no-startup-i mons -d, mode "default"
-	bindsym Down exec --no-startup-i mons -m, mode "default"
-	bindsym Up exec --no-startup-id mons -o, mode "default"
-	bindsym Right exec --no-startup-id mons -s, mode "default"
+	bindsym Down exec --no-startup-id ~/.screenlayout/extend.sh && ~/.fehbg, mode "default"
+	bindsym Up exec --no-startup-id ~/.screenlayout/builtin.sh && ~/.fehbg, mode "default"
+	bindsym Right exec --no-startup-id ~/.screenlayout/extern.sh && ~/.fehbg, mode "default"
 
 	# Back to normal: Enter or Escape
 	bindsym Return mode "default"
