@@ -86,7 +86,7 @@ set list
 
 " Colorscheme differs between GUI and CLI
 if has("gui_running")
-	colors evening
+	colors baycomb
 else
 	" Set consistent bgcolor with Xres file before loading the colorscheme
 	let g:dracula_colorterm = 0
