@@ -241,6 +241,9 @@ bar {
 	}
 }
 
+# Launch hardware compositor in background
+exec --no-startup-id picom -b
+
 # Set wallpaper
 exec --no-startup-id feh --bg-fill ~/dotfiles/wallpaper/PANB6669.JPG
 
