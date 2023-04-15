@@ -1,0 +1,15 @@
+# Ceci est le fichier de configuration personnel de Git.
+[user]
+# Veuillez adapter et décommenter les lignes suivantes :
+	name = Raphaël Gallais-Pou
+	email = raphael.gallais.pou@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = vim
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
+[sendemail]
+	confirm = always

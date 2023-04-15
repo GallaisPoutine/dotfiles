@@ -15,6 +15,7 @@ ln -snf ${PWD}/i3/config		${HOME}/.config/i3
 ln -snf ${PWD}/i3/i3status-config.toml	${HOME}/.config/i3
 ln -snf ${PWD}/rofi/config.rasi		${HOME}/.config/rofi
 ln -snf ${PWD}/screenlayout		${HOME}/.screenlayout
+ln -snf ${PWD}/git/gitconfig		${HOME}/.gitconfig
 
 if [ ! -d $HOME/.local/bin ]; then
 	mkdir -pv ${HOME}/.local/bin
