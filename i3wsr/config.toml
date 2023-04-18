@@ -1,0 +1,20 @@
+[icons]
+# font awesome
+firefox = ""
+Alacritty = ""
+Thunderbird = ""
+URxvt = ""
+Gpick = ""
+Nautilus = "📘"
+ranger = ""
+
+[aliases]
+
+[general]
+default_icon = ""
+wm_property = "class"
+
+[options]
+remove_duplicates = true
+no_names = false
+no_icon_names = true
