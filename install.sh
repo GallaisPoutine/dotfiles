@@ -12,7 +12,7 @@ ln -snf ${PWD}/dircolors/dracula	${HOME}/.dircolors
 ln -snf ${PWD}/vim/vimrc 		${HOME}/.vimrc
 ln -snf ${PWD}/xres/Xresources 		${HOME}/.Xresources
 ln -snf ${PWD}/i3/config		${HOME}/.config/i3
-ln -snf ${PWD}/i3/i3status-config.toml	${HOME}/.config/i3
+ln -snf ${PWD}/i3status-rust/config.toml	${HOME}/.config/i3status-rust
 ln -snf ${PWD}/rofi/config.rasi		${HOME}/.config/rofi
 ln -snf ${PWD}/screenlayout		${HOME}/.screenlayout
 ln -snf ${PWD}/git/gitconfig		${HOME}/.gitconfig
