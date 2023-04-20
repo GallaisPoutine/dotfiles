@@ -1,12 +1,19 @@
 [icons]
 # font awesome
 firefox = ""
+Google-chrome = ""
 Alacritty = ""
-Thunderbird = ""
+thunderbird = ""
 URxvt = ""
 Gpick = ""
 Nautilus = "📘"
 ranger = ""
+Evince = ""
+Gvim = ""
+# gitk = ""
+gitk = ""
+Spotify = ""
+Zathura = "#"
 
 [aliases]
 
