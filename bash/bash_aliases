@@ -144,9 +144,7 @@ alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when boo
 #   9.  DATE & TIME MANAGEMENT
 #   ---------------------------------------
 
-alias bdate="date '+%a, %b %d %Y %T %Z'"
 alias cal3='ncal -3wM'
-alias da='date "+%Y-%m-%d %A    %T %Z"'
 alias daysleft='echo "There are $(($(date +%j -d"Dec 31, $(date +%Y)")-$(date +%j))) left in year $(date +%Y)."'
 alias epochtime='date +%s'
 alias mytime='date +%H:%M:%S'
@@ -193,8 +191,6 @@ function work_in_progress() {
 # (sorted alphabetically)
 #
 
-alias g='git'
-
 alias ga='git add'
 alias gaa='git add --all'
 alias gapa='git add --patch'
@@ -207,11 +203,6 @@ alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|d
 alias gbl='git blame -b -w'
 alias gbnm='git branch --no-merged'
 alias gbr='git branch --remote'
-alias gbs='git bisect'
-alias gbsb='git bisect bad'
-alias gbsg='git bisect good'
-alias gbsr='git bisect reset'
-alias gbss='git bisect start'
 
 alias gc='git commit -v'
 alias gc!='git commit -v --amend'
@@ -334,10 +325,8 @@ alias glgp='git log --stat -p'
 alias glgg='git log --graph'
 alias glgga='git log --graph --decorate --all'
 alias glgm='git log --graph --max-count=10'
-alias glo='git log --oneline --decorate'
 alias gla='git log --oneline --decorate --all --graph'
 alias gln='git log --oneline --decorate -n'
-alias glol="git log --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glal="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
 alias glog='git log --oneline --decorate --graph'
 alias glag='git log --oneline --decorate --graph --all'
@@ -381,7 +370,6 @@ alias gsi='git submodule init'
 alias gsps='git show --pretty=short --show-signature'
 alias gsr='git svn rebase'
 alias gss='git status -s'
-alias gst='git status'
 alias gsta='git stash save'
 alias gstaa='git stash apply'
 alias gstc='git stash clear'

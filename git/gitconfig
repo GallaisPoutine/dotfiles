@@ -3,13 +3,24 @@
 # Veuillez adapter et décommenter les lignes suivantes :
 	name = Raphaël Gallais-Pou
 	email = raphael.gallais.pou@gmail.com
+[am]
+	threeWay = true
 [color]
 	ui = auto
 [core]
 	editor = vim
+[pretty]
+	log = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
 [pull]
 	rebase = true
 [rebase]
 	autostash = true
 [sendemail]
 	confirm = always
+	suppressFrom = true
+	suppresscc = self
+[alias]
+	au = "add --update"
+	ls = "log --pretty=log --abbrev-commit"
+	la = "log --pretty=log --abbrev-commit --graph --all"
+	s = "status"
