@@ -1,8 +1,8 @@
 # Ceci est le fichier de configuration personnel de Git.
 [user]
 # Veuillez adapter et décommenter les lignes suivantes :
-	name = Raphaël Gallais-Pou
-	email = raphael.gallais.pou@gmail.com
+	name = Raphael Gallais-Pou
+	email = rgallaispou@gmail.com
 [am]
 	threeWay = true
 [color]
