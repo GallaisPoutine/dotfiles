@@ -21,6 +21,16 @@
 	suppresscc = self
 [alias]
 	au = "add --update"
-	ls = "log --pretty=log --abbrev-commit"
+	c = "commit"
+	ca = "commit --amend"
+	co = "checkout"
+	d = "diff"
 	la = "log --pretty=log --abbrev-commit --graph --all"
+	ln = "log --pretty=log --abbrev-commit -n"
+	ls = "log --pretty=log --abbrev-commit"
 	s = "status"
+	sd = "stash drop"
+	sl = "stash list"
+	sp = "stash push"
+	spp = "stash pop"
+	st = "stash show --text"
