@@ -17,6 +17,7 @@
 	autostash = true
 [sendemail]
 	confirm = always
+	smtpServer = /usr/bin/msmtp
 	suppressFrom = true
 	suppresscc = self
 [alias]
