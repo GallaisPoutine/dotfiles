@@ -17,6 +17,7 @@ ln -snf ${PWD}/i3wsr/config.toml	${HOME}/.config/i3wsr
 ln -snf ${PWD}/rofi/config.rasi		${HOME}/.config/rofi
 ln -snf ${PWD}/screenlayout		${HOME}/.screenlayout
 ln -snf ${PWD}/git/gitconfig		${HOME}/.gitconfig
+ln -snf ${PWD}/sway/config		${HOME}/.config/sway
 
 if [ ! -d $HOME/.local/bin ]; then
 	mkdir -pv ${HOME}/.local/bin
