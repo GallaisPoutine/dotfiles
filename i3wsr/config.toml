@@ -23,5 +23,4 @@ wm_property = "class"
 
 [options]
 remove_duplicates = true
-no_names = false
-no_icon_names = true
+no_names = true
