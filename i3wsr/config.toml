@@ -10,10 +10,10 @@ Nautilus = "📘"
 ranger = ""
 Evince = ""
 Gvim = ""
-# gitk = ""
-gitk = ""
+Gitk = ""
 Spotify = ""
 Zathura = "#"
+foot = ""
 
 [aliases]
 
