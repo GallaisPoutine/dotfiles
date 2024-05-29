@@ -144,7 +144,7 @@ alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when boo
 #   9.  DATE & TIME MANAGEMENT
 #   ---------------------------------------
 
-alias cal3='ncal -3wM'
+alias cal3='ncal -3wMb'
 alias daysleft='echo "There are $(($(date +%j -d"Dec 31, $(date +%Y)")-$(date +%j))) left in year $(date +%Y)."'
 alias epochtime='date +%s'
 alias mytime='date +%H:%M:%S'
