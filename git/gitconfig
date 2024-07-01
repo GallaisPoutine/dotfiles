@@ -22,6 +22,7 @@
 	suppresscc = self
 [alias]
 	au = "add --update"
+	bv = "branch -vvv"
 	c = "commit"
 	ca = "commit --amend"
 	co = "checkout"
