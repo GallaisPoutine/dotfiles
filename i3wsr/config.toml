@@ -20,6 +20,7 @@ foot = ""
 [general]
 default_icon = ""
 wm_property = "class"
+ignore = "."
 
 [options]
 remove_duplicates = true

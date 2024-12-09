@@ -3,6 +3,7 @@
 # Veuillez adapter et décommenter les lignes suivantes :
 	name = Raphael Gallais-Pou
 	email = rgallaispou@gmail.com
+	signingkey = D412C2B5
 [am]
 	threeWay = true
 [color]

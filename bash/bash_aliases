@@ -27,7 +27,6 @@ function qgrep() {
 	grep -rinI "$1" .
 }
 alias minicom='minicom -w --color=on'
-alias feh='feh --image-bg black --scale-down'	# Improve image viewer experience
 
 
 #   -----------------------------
