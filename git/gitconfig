@@ -12,8 +12,6 @@
 	editor = vim
 [pretty]
 	log = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
-[pull]
-	rebase = true
 [rebase]
 	autostash = true
 [sendemail]
@@ -32,6 +30,7 @@
 	la = "log --pretty=log --abbrev-commit --graph --all"
 	ln = "log --pretty=log --abbrev-commit -n"
 	ls = "log --pretty=log --abbrev-commit"
+	pr = "pull --rebase"
 	s = "status"
 	sl = "stash list"
 	sp = "stash push"

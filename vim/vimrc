@@ -19,12 +19,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Support file:line
+Plugin 'bogado/file-line'
+
 " Version control
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 
 " File explorer
-Plugin 'preservim/nerdtree'
+" Plugin 'preservim/nerdtree'
 
 " File layout
 Plugin 'majutsushi/tagbar'
@@ -37,6 +40,9 @@ Plugin 'tpope/vim-surround'
 
 " Completion
 Plugin 'raimondi/delimitmate'
+
+" LangServ will this work one day ?
+" Plugin 'w0rp/ale'
 
 " Color schemes
 Plugin 'baycomb'
@@ -54,7 +60,7 @@ Plugin 'xemacs-colorscheme'
 Plugin 'dracula/vim'
 
 " ??? what the fuck is this ???
-Plugin 'junegunn/goyo.vim'
+" Plugin 'junegunn/goyo.vim'
 
 " Show color from hex
 " /!\ Only use it manually /!\
