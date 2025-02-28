@@ -30,7 +30,7 @@ Plugin 'mhinz/vim-signify'
 " Plugin 'preservim/nerdtree'
 
 " File layout
-Plugin 'majutsushi/tagbar'
+Plugin 'preservim/tagbar'
 
 " Linux kernel coding style
 Plugin 'gregkh/kernel-coding-style'
@@ -42,7 +42,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'raimondi/delimitmate'
 
 " LangServ will this work one day ?
-" Plugin 'w0rp/ale'
+"Plugin 'dense-analysis/ale'
 
 " Color schemes
 Plugin 'baycomb'
