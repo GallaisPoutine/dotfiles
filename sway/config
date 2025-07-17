@@ -238,7 +238,7 @@ gaps outer 3
 bindsym $mod+b exec --no-startup-id /usr/bin/firefox
 
 # Bind file explorer to $mod+i
-bindsym $mod+i exec --no-startup-id $term -e /usr/bin/ranger
+bindsym $mod+i exec --no-startup-id $term -e /usr/bin/yazi
 
 #
 # Status Bar:

@@ -17,10 +17,6 @@
 	colorMoved = plain
 	mnemonicPrefix = true
 	renames = true
-[fetch]
-	all = true
-	prune = true
-	pruneTags = true
 [merge]
 	conflictstyle = zdiff3
 [pretty]
@@ -40,6 +36,7 @@
 	co = "checkout"
 	d = "diff"
 	ds = "diff --staged"
+	g = "grep -ni"
 	la = "log --pretty=log --abbrev-commit --graph --all"
 	ln = "log --pretty=log --abbrev-commit -n"
 	ls = "log --pretty=log --abbrev-commit"
