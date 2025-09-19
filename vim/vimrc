@@ -27,7 +27,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 
 " File explorer
-" Plugin 'preservim/nerdtree'
+ Plugin 'preservim/nerdtree'
 
 " File layout
 Plugin 'preservim/tagbar'
@@ -64,7 +64,7 @@ Plugin 'dracula/vim'
 
 " Show color from hex
 " /!\ Only use it manually /!\
-Plugin 'lilydjwg/colorizer'
+"Plugin 'lilydjwg/colorizer'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Checkout https://vimawesome.com for more plugins
