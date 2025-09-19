@@ -11,6 +11,7 @@
 [commit]
 	verbose = true
 [core]
+        abbrev = 12
 	editor = vim
 [diff]
 	algorithm = histogram
@@ -20,6 +21,7 @@
 [merge]
 	conflictstyle = zdiff3
 [pretty]
+        fixes = Fixes: %h (\"%s\")
 	log = "%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset"
 [rebase]
 	autostash = true
