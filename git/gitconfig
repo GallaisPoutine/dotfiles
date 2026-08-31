@@ -1,7 +1,7 @@
 # Ceci est le fichier de configuration personnel de Git.
 [user]
 # Veuillez adapter et décommenter les lignes suivantes :
-	name = Raphael Gallais-Pou
+	name = Raphaël Gallais-Pou
 	email = rgallaispou@gmail.com
 	signingkey = D412C2B5
 [am]
@@ -40,6 +40,7 @@
 	ds = "diff --staged"
 	g = "grep -ni"
 	la = "log --pretty=log --abbrev-commit --graph --all"
+	lb = "log --pretty=log --abbrev-commit --graph --branches"
 	ln = "log --pretty=log --abbrev-commit -n"
 	ls = "log --pretty=log --abbrev-commit"
 	pr = "pull --rebase"
