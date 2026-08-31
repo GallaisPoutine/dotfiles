@@ -5,13 +5,6 @@ theme = "slick"
 icons = "awesome6"
 
 [[block]]
-block = "music"
-player = "spotify"
-# [[block.click]]
-# button = "left"
-#  = ["prev", "play_pause", "next"]
-
-[[block]]
 block = "memory"
 format = " $icon $mem_used_percents.eng(w:1) "
 format_alt = " $icon_swap $swap_used_percents.eng(w:1) "
@@ -44,6 +37,7 @@ cycle = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
 [[block]]
 block = "sound"
+max_vol = 100
 
 [[block]]
 block = "time"
