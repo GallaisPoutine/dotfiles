@@ -88,6 +88,7 @@ set mouse=a	" Enable mouse scrolling
 set ignorecase smartcase	" Improve search
 set autoindent smartindent	" Improve indentation
 set hlsearch			" Hightlight search
+set number			" Show line numbers
 
 " Highlight tabs and trailing whitespaces
 set listchars=tab:»\ ,trail:·
